@@ -1,0 +1,374 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+% \usepackage{lipsum}
+% \usepackage{natbib}
+% \usepackage{graphicx}
+\newtheorem{art}{Art\' iculo}
+\usepackage{titlesec} 
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage[a4paper, left=2.5cm,right=2.5cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{figures/back}%
+\vfill
+}}}
+
+%------------------Main Font-------------------------
+\setmainfont{NotoSansCJKsc}
+
+%C:\Program Files\MiKTeX 2.9\fonts\opentype
+
+%Make sure you have the compiler "XeLaTeX" activated on your settings for your LaTeX document in order to see the font 
+
+%------------------Color Set--------------------------
+\definecolor{LightBlue}{RGB}{250, 193, 6}
+\definecolor{DarkBlue}{RGB}{138, 109, 28}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+\definecolor{Orange}{RGB}{229, 133, 3}
+\definecolor{MediumBlue}{RGB}{184, 146, 40}
+
+%------------------Section Default Setting-------------
+\titleformat*{\section}{\color{DarkBlue}\normalfont\bfseries\Huge}
+\titleformat*{\subsection}{\color{LightBlue}\normalfont\bfseries\Large}
+\titleformat*{\subsubsection}{\color{MediumBlue}\normalfont\bfseries\LARGE}
+
+%-------------------Section Numbers Removal------------
+\setcounter{secnumdepth}{0}
+
+
+%-------------------------Header & Footer------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=north west, yshift=1.5mm, xshift=-1.5mm] at (current page.north west) {\includegraphics[height=25mm]{figures/header_corner.png}};
+\end{tikzpicture}
+}
+\fancyfoot[C]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=south east, yshift=-1.5mm, xshift=1.5mm] at (current page.south east) {\includegraphics[width=210mm]{figures/banner.png}};
+\end{tikzpicture}
+\textcolor{LightGray}{\thepage}
+}
+
+%------------------Document----------------------------
+
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\center
+{\Huge \bfseries Octava Semana \\ Electrónica 2019} \\[1cm]
+\includegraphics[width=6cm]{figures/Li-UNSAAC}\\[1cm]
+\textsc{\LARGE  Universidad Nacional de San \\[0.2cm] Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, \\ Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+\HRule \\[0.4cm]
+{ \huge \bfseries Concurso de Posters}\\[0.3cm] 
+\HRule \\[1.5cm]
+\today
+\end{titlepage}
+
+
+
+\newpage
+\noindent
+\normalfont
+
+\section{PRESENTACIÓN}
+\normalfont
+
+La Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), a través de la Escuela Profesional de Ingeniería Electrónica, en cumplimiento de las normas que rigen la investigación, con el objetivo de difusión y promoción de Investigación en tecnología de actualidad; organizado por la \textbf{VIII Semana Electrónica UNSAAC} presenta el \textbf{Primer Concurso de Posters Científicos UNSAAC 2019}, el cual hace un extenso llamado a estudiantes, centros de investigación, circulos de investigacin, circulos de estudio de la UNSAAC para formar parte de este evento que será presentado al público en general.
+
+\section{ORGANIZACIÓN}
+
+La Universidad Nacional de San Antonio Abad del Cusco a través de la Escuela Profesional de Ingeniería Electrónica con la colaboración del Centro de Investigación en Robótica, Control y Automatización Electrónica (CIRCAE)
+
+\section{BASE LEGAL}
+
+\begin{itemize}
+\item Constitución Política del Perú.
+\item Ley General de Educación N 28044 .
+\item Ley Universitaria No 30220.
+\item Ley N 28303, Ley Marco de Ciencia, Tecnología e Innovación Tecnológica.
+\item Ley N 28613, Ley del Consejo Nacional de Ciencia, Tecnología e Innovación 
+Tecnológica, CONCYTEC.
+\item Plan Nacional de Ciencia, Tecnología e Innovación Tecnológica para el Desarrollo 
+Productivo y Social Sostenible 2006-2021.
+\item Políticas según el Vicerrectorado de Investigación de la Universidad Nacional de San Antonio Abad del Cusco.
+\item El Estatuto de la Universidad Nacional de San Antonio Abad del Cusco.
+\end{itemize}
+
+\section{OBJETIVOS}
+
+Promover e incentivar a jóvenes investigadores de toda la UNSAAC a la constante preparación en investigación en diversos campos presentados, los cuales suman al desarrollo y solución de problemas que aqueja a nuestra sociedad.
+
+\section{LINEAMIENTOS DE CONVOCATORIA}
+
+Los trabajos que se aceptarán serán aquellos que cumplan alguna de los siguientes tipos de presentación.
+
+\begin{itemize}
+\item Trabajo original de investigación.
+\item Revisión bibliográfica.
+\item Exposición de un Proyecto desarrollado.
+\item Exposición de un Proyecto en Curso.
+\end{itemize}
+
+Estos deberán estar referidas de acuerdo a la siguiente tabla.
+
+\begin{tabular}{|p{5cm}|p{10cm}|}
+\hline
+\textbf{Categoría} & \textbf{Característica} \\ \hline
+Control Y Automatización & Trabajo de planeación, proyección, diseño, construcción, conservación o mantenimiento de dispositivos, equipos y sistemas de control industrial que utilicen o combinen distintos principios derivados de la neumática, hidráulica, mecánica, robótica, electrónica y la cibernética. \\ \hline
+Bioelectrónica & Trabajo que demuestre la capacidad de aplicar conocimientos avanzados de electrónica para la solución de problemas relacionados con bioinstrumentación, biomecánica, bioinformática, robótica médica, procesamiento digital se bioseñales, etc. que mejoren la calidad de vida de cualquier persona. \\ \hline
+Telecomunicaciones &     Trabajo que muestre la elaboración de proyectos de infraestructura, la gestión de redes, hasta su integración, diseño de sistemas electrónicos, proyectos de infraestructura de telecomunicación, gestión, planeación, operación de redes, servicios de telecomunicación, diseño e implementación de sistemas, herramientas de seguridad para el almacenamiento, la transmisión de la información, así como para el acceso a redes y sistemas. Integración de redes, equipos, sistemas de comunicaciones, diseño de sistemas electrónicos para aplicaciones industriales, comunicaciones y entretenimiento. \\ \hline
+Circuitos Electrónicos & Trabajo que muestre el identificar, plantear y resolver problemas científicos y técnicos relacionados con la Ingeniería Electrónica, mediante el uso de conceptos, técnicas y métodos propios de las ciencias y la ingeniería. \\ \hline
+\end{tabular}
+
+\section{ESPECIFICACIONES DE LOS POSTERS}
+ Se propone un diseño de poster con fondo de color plano (blanco), deberá contener de manera obligatoria el logo de la UNSAAC y la Escuela Profesional a la que pertenece. Bajo estos elementos se compondrá todo el contenido del Poster.
+ 
+ Se tendrá en cuenta las siguientes características:
+ 
+ \section{Especificaciones}
+ 
+ El poster será diseñado e impreso en A1 vertical(ancho de 59.4cm x alto de 84.1cm), y borde superior, inferior, derecha e izquierda de 2cm como mínimo. 
+ 
+ \begin{itemize}
+ \item La separación entre columnas de texto será de 2cm como mínimo.
+ \item Se usarán dos columnas de texto, con ancho de columna definidas por el autor. 
+ \item El tipo de fuente a utilizarse solo podrá variar entre \textbf{Calibri} o \textbf{Times New Roman} con sus variantes de negrita, cursiva, y subrayado. 
+ \item En caso de usar \LaTeX, usar la fuente preestabecida con sus variantes. 
+ \item El tamaño de letra para el contenido del cuerpo del poster será de 24pt, diseñando y estructurando para A1
+ \item Los gráficos y demás elementos incluidos deberán de tener un color predominante segun categoría:
+ \begin{itemize}
+ \item \textbf{Control y Automatización} Azul y colores relacionados
+ \item \textbf{Bioelectrónica} Rojo y colores relacionados
+ \item \textbf{Telecomunicaciones} Amarillo y colores relacionados
+ \item \textbf{Circuitos Electrónicos} Verde y colores relacionados
+ \end{itemize}
+ 
+ \item El tamaño de fuente del título deberá tener 54pt de tamaño, todo en Mayúscula.
+ \item La estructura fundamental deberá seguir la siguiente secuencia como recomendación.
+ \begin{itemize}
+ \item Títlo
+ \item Autor(es)
+ \item Correo
+ \item Descripción del problema que plantea
+ \item Formulación de Objetivo
+ \item Resultados
+ \end{itemize}
+ \item Se recomienda un orden lógico en la presentación, y dimensiones mesuradas de gráfico u otros objetos que se vaya a insertar en el poster, siguiendo los colores según categoría.
+\end{itemize}  
+ 
+ 
+ 
+
+\section{PARTICIPANTES}
+
+\begin{itemize}
+\item Estudiantes de la Universidad Nacional de San Antonio Abad del Cusco.
+\item Centros de Investigación, Circulos de Investigación y Estudio de la Universidad Nacional de San Antonio Abad del Cusco.
+\end{itemize}
+
+\subsection{Modalidad}
+
+\begin{itemize}
+\item Participación individual.
+\item Participación grupal con 5 integrantes como máximo.
+\end{itemize}
+
+Cada persona o grupo puede presentar uno o más trabajos en una o varias categorías.
+
+\section{RECONOCIMIENTOS}
+
+Todos los participantes aceptados recibirán una cestificación en calidad de participante haciendo mención del título de su tabajo o de sus trabajos en caso se haya presentado varios trabajos. A premiación será para el primer, segundo y tercer puesto por estricto orden de mérito. Los resultados de la competencia son inapelable. Los trabajos ganadores recibirán un reconocmiento e incentivo por parte de la Escuela profesional de Ingeniería Electrónica a través de los ingenieros de la misma y recibirán certificación de ganadores por orden de mérito.
+
+
+
+\section{ETAPAS}
+
+\begin{tabular}{|p{8cm}|p{8cm}|}
+\hline
+\textbf{ETAPA} &  \textbf{REQUSITOS} \\ \hline
+Convocatoria por la Escuela Profesional de Ingeniería Electrónica & Estudiantes, Centros de Investigación, Circulos de Investigación y Estudio de la Universidad Nacional de San Antonio Abad del Cusco. \\ \hline
+Inscripciones de Trabajos del \textbf{12 de noviembre} hasta el \textbf{26 de noviembre} hastas las 9.00pm en el Centro de Investigación en Robótica, Control y Automatización Electronica (3er piso del pabellón de la Escuela Profesional de Ingeniería Electrónica). Consultas a circae.unsaac@gmail.com & Llenar los formatos anexados en estas bases (Anexo 1, Anexo 2 y Anexo 3), impresión a color en A4 como muestra, copias de DNI el o los integrantes. \\ \hline
+Evaluación y Preselección de trabajos el \textbf{27 de noviembre} & LA comisión evaluadora seleccionará los posters para la presentación del sábado 30 de noviembre. Los resultados de preselección se hará llegar antes de las 9.00am del 28 de noviembre via correo electrónico y publicada en la red social oficial de la Escuea Profesional \texttt{https://www.facebook.com/Ingeniería-Electrónica-Unsaac-100140831455046/}. \\ \hline
+Entrega de posters seleccionados & LA impresión de los posters seleccionados las harán cada equipo o participante en A1  y se entregarán en el Centro de Investigación en Robótica, Control y Automatización Electronica (3er piso del pabellón de la Escuela Profesional de Ingeniería Electrónica). Consultas a circae.unsaac@gmail.com hasta las 9.00am del 29 de noviembre. \\ \hline
+Exposición de Posters por la \textbf{VIII Semana Electrónica UNSAAC} el sábado 30 de noviembre. & Los autores deberán estar presentes a lado de sus posters por un tiempo prudente, a fin de hacer más dinámico el evento. \\ \hline
+Evaluación & Estará a cargo de profesionales especialistas en cada área. El día de la feria se hará una evaluación con especialistas de cada área y se basará en: Relevancia, originalidad, metodología, calidad científica, síntesis, claridad y apariencia.\\ \hline
+Resultados & La divlugación de los resultados se hará llegar a los participantes seleccionados via correo electrónico hasta el 15 de diciembre y en la red social oficial de la Escuea Profesional \texttt{https://www.facebook.com/Ingeniería-Electrónica-Unsaac-100140831455046/}. \\ \hline
+Premiación & La premiación e incentivos se darán en el transcurso del més de diciembre. Se hará reconocimiento en una ceremonia pública. \\ \hline
+\end{tabular}
+
+\textbf{Cualquier aspecto que no se haya considerado en las bases, será resuelto por la comisión 
+organizadora de la VIII Semana Electrónica UNSAAC 2019}
+
+\newpage
+{\center
+{\Huge \bfseries Octava Semana Electrónica 2019} \\ [0.4cm]
+\textsc{\LARGE  Universidad Nacional de San Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+{ \bfseries Anexo1 - Datos Generales}}
+
+\subsubsection{TÍTULO DEL PROYECTO}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\subsubsection{Datos Generales}
+
+\begin{tabular}{|p{5cm}|p{10cm}|}
+\hline
+Nombres & \\ \hline
+Apellidos & \\ \hline
+DNI & \\ \hline
+Código & \\ \hline
+Sexo & \\ \hline
+E-mail & \\ \hline
+Numero de teléfono movil & \\ \hline
+Dirección & \\ \hline
+Escuela Profesional & \\ \hline
+Número de participante del Equipo & \\ \hline
+\end{tabular}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 6cm]{IMAGENES/firma.jpg}
+\caption{Huella digital, firma con nombre completo y DNI}
+\end{figure}
+
+\newpage
+{\center
+{\Huge \bfseries Octava Semana Electrónica 2019} \\ [0.4cm]
+\textsc{\LARGE  Universidad Nacional de San Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+{ \bfseries Anexo2 - Formulario de Inscripción}}
+
+\subsubsection{TITULO}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\subsubsection{CATEGORÍA}
+
+.....................................................................................................................................................................
+
+\subsubsection{RESUMEN DEL TRABAJO DE INVESTIGACIÓN}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\textbf{Al firmar el documento, acepta los términos y condiciones de las bases.}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 6cm]{IMAGENES/firma.jpg}
+\caption{Huella digital, firma con nombre completo y DNI}
+\end{figure}
+
+\newpage
+{\center
+{\Huge \bfseries Octava Semana Electrónica 2019} \\ [0.4cm]
+\textsc{\LARGE  Universidad Nacional de San Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+{ \bfseries Anexo3 - Declaración Jurada}}
+
+\subsubsection{DECLARACIÓN JURADA DE NO PLAGIO}
+
+Yo, ........................................................................................................................................, con DNI Número 
+......................, participante del \textbf{Primer Concurso de Posters Científicos} presentado en la \textbf{VIII Semana Electrónica UNSAAC 2019}, con el trabajo titulado :
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+Declaro bajo juramento que: 
+
+\begin{itemize}
+\item El trabajo a presentarse en el poster, en la VIII Semana Electrónica UNSAAC 2019, es de mi autoría. 
+\item He respetado las normas y referencias para las fuentes consultadas. Por tanto el proyecto no ha sido 
+plagiado total ni parcialmente. 
+\item El proyecto no ha sido autoplagiado, es decir no ha sido presentado ni publicado anteriormente. De 
+identificarse fraude (datos falsos), plagio (información sin citar autores), autoplagio (presentar como 
+nuevo algún trabajo de investigación propio que ya ha sido presentado), piratería (uso ilegal de 
+información ajena) o falsificación (representar falsamente las ideas de otros), asumo las consecuencias 
+y sanciones que de mi acción se deriven, sometiéndome a las normas de la Universidad así como a la 
+normatividad nacional competente.
+\end{itemize}
+
+Cusco, .......... de noviembre del 2019
+
+
+
+
+\textbf{Al firmar el documento, acepta los términos y condiciones de las bases.}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 6cm]{IMAGENES/firma.jpg}
+\caption{Huella digital, firma con nombre completo y DNI. }
+\end{figure}
+
+Adjuntar Copia de DNI
+
+\newpage
+
+\includegraphics[width = 16cm]{IMAGENES/EJEMPLO1.jpg} 
+
+\includegraphics[width = 16cm]{IMAGENES/EJEMPLO2.jpg}
+
+\end{document}
