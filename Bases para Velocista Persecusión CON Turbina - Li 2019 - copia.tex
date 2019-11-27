@@ -1,0 +1,352 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+% \usepackage{lipsum}
+% \usepackage{natbib}
+% \usepackage{graphicx}
+\newtheorem{art}{Art\' iculo}
+\usepackage{titlesec} 
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage[a4paper, left=2.5cm,right=2.5cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{figures/back}%
+\vfill
+}}}
+
+%------------------Main Font-------------------------
+\setmainfont{NotoSansCJKsc}
+
+%C:\Program Files\MiKTeX 2.9\fonts\opentype
+
+%Make sure you have the compiler "XeLaTeX" activated on your settings for your LaTeX document in order to see the font 
+
+%------------------Color Set--------------------------
+\definecolor{LightBlue}{RGB}{250, 193, 6}
+\definecolor{DarkBlue}{RGB}{138, 109, 28}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+\definecolor{Orange}{RGB}{229, 133, 3}
+\definecolor{MediumBlue}{RGB}{184, 146, 40}
+
+%------------------Section Default Setting-------------
+\titleformat*{\section}{\color{DarkBlue}\normalfont\bfseries\Huge}
+\titleformat*{\subsection}{\color{LightBlue}\normalfont\bfseries\Large}
+\titleformat*{\subsubsection}{\color{MediumBlue}\normalfont\bfseries\LARGE}
+
+%-------------------Section Numbers Removal------------
+\setcounter{secnumdepth}{0}
+
+
+%-------------------------Header & Footer------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=north west, yshift=1.5mm, xshift=-1.5mm] at (current page.north west) {\includegraphics[height=25mm]{figures/header_corner.png}};
+\end{tikzpicture}
+}
+\fancyfoot[C]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=south east, yshift=-1.5mm, xshift=1.5mm] at (current page.south east) {\includegraphics[width=210mm]{figures/banner.png}};
+\end{tikzpicture}
+\textcolor{LightGray}{\thepage}
+}
+
+%------------------Document----------------------------
+
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\center
+{\Huge \bfseries Octava Semana \\ Electrónica 2019} \\[1cm]
+\includegraphics[width=6cm]{figures/Li-UNSAAC}\\[1cm]
+\textsc{\LARGE  Universidad Nacional de San \\[0.2cm] Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, \\ Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+\HRule \\[0.4cm]
+{ \huge \bfseries Torneo de Robot Velocista Persecusión \\
+Con Turbina}\\[0.3cm] 
+\HRule \\[1.5cm]
+\today
+\end{titlepage}
+
+
+
+\newpage
+\noindent
+\normalfont
+
+\section{PRESENTACIÓN}
+\normalfont
+
+La Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), a través de la Escuela Profesional de Ingeniería Electrónica, en cumplimiento de las normas que rigen la investigación, con el objetivo de difusión y promoción de Investigación en tecnología de actualidad; organizado por la \textbf{VIII Semana Electrónica UNSAAC} presenta el \textbf{Torneo de Robótica UNSAAC 2019}, el cual hace un extenso llamado a estudiantes, centros de investigación, circulos de investigación, circulos de estudio de la UNSAAC para formar parte de este evento que será presentado al público en general.
+
+\section{DESCRIPCIÓN GENERAL}
+
+En esta categoría se realizara una carrera entre dos robots velocistas en un
+circuito simétrico cerrado, para esto ambos robots inician el recorrido al mismo
+tiempo pero en puntos dimensionalmente opuestos y gana el robot que logre
+alcanzar al oponente o permanezca dentro del circuito por más tiempo.
+
+\section{REGLAMENTO DE LA COMPETENCIA}
+
+\begin{enumerate}
+\item Se verificara que se cumplan satisfactoriamente las especificaciones técnicas
+del robot.
+\item Se realizara una vuelta de prueba sobre la pista, verificando con esto el
+correcto funcionamiento.
+\end{enumerate}
+
+
+
+\section{LOS EQUIPOS}
+
+Los participantes se comprometen a comportarse dentro de los cánones
+establecidos de corrección en cualquier actuación vinculada con la prueba,
+especialmente se cuidarán de decir palabras que denoten insultos a los
+jueces, a otros participantes, a los Robots participantes y al público en general.
+En casos extremos, los jueces o el jurado se reservan el derecho de expulsar
+de la competencia a quienes se crean merecedores de dicha atención.
+
+\section{ESPECIFICACIONES DEL ROBOT}
+
+\begin{enumerate}
+\item Los robots solo podrán ser de tipo diferencial, no podrán competir robots del
+tipo triciclo o tracción ackerman.
+\item El robot podrá ser controlado con microprocesadores, microcontroladores o
+algún otro tipo de controlador que gestione los movimientos del robot.
+\item No está permitido el uso de robots comerciales (LEGO u otro) para el diseño y
+construcción del robot.
+\item No está permitido el uso de placas electrónicas prefabricadas en serie exceptuando
+cualquier placa de experimentación PROGRAMABLE (arduino, netduino, etc)
+avisando antes a los organizadores de la competencia.
+\item Las dimensiones del robot no podrá ser mayor a 20cm de ancho y 25cm de
+largo sin embargo la altura y el peso no está limitado.
+\item El accionamiento del robot se realizara de forma manual cuando se indique la
+salida. Los robots no pueden tener partes en movimiento antes de la señal de
+salida.
+\item Cada robot debe ser completamente autónomo a nivel de locomoción,
+muestreo y procesamiento. Actuadores, sensores, energía y procesado deben
+estar incorporados en el robot, debiendo este tomar sus propias decisiones.
+\item  No se podrá dar ninguna instrucción directa o indirecta al robot después de
+encenderlo, es decir, no se admite ningún sistema de comunicación con el
+robot.
+\item Se prohíbe usar baterías que puedan dispersar su contenido
+Los puntos no previstos en la convocatoria se resolverán por el comité
+organizador.
+\item Solo se permitirá robots con \textbf{ algún tipo de turbina o sistema de succión que esté en la estructura del robot.}
+\end{enumerate}
+
+\section{LA COMPETENCIA}
+Características de la pista:
+\begin{enumerate}
+
+\item El ancho de la línea es de 2.00+/-0.05.
+\item La pista tendrá una superficie de fondo blanco y línea de color negra.
+\item La pista será impresa en lona front y estará sobre una superficie uniforme.
+\item El radio mínimo de cualquier cura del circuito será de 10 cm.
+\item Se indicaran los puntos de salida mediante alguna marca que no afecte el
+desempeño de los robots.
+\item No se garantiza una iluminación especial por lo que los competidores deberán
+estar preparados para recalibrara sus sensores en caso de que lo requieran.
+\end{enumerate}
+ 
+ \subsection{DESARROLLO DE LAS PRUEBAS}
+ 
+ 
+ \begin{enumerate}
+\item La competencia será en la modalidad de persecución, para ello se colocaran
+los robots en las marcas especificadas en los extremos de la pista.
+\item Ambos robots se encenderán a la par al escuchar la señalización del juez y
+proseguirán a perseguirse hasta que uno alcance al otro o hasta que alguno
+de los 2 salga de la pista y no pueda regresar a ella sin ayuda externa.
+\item Se considera válido que un robot regrese a la pista si este lo logra sin ayuda
+externa, es decir, sin que el operario interfiera; por otro lado, el robot deberá
+regresar a la pista en el mismo punto o antes del punto en que abandono a la
+misma, con el fin de evitar atajos.
+\item El tiempo técnico es de 3 minutos y debe ser pedido antes de empezar la
+carrera.
+\item Si el robot no funciona desde el principio o deja de funcionar
+por cualquier motivo, pierde automáticamente la competencia.
+\item El método por el cual se realizarán las eliminatorias y rondas finales se tratará
+después de la homologación
+\end{enumerate}
+
+
+\section{PETICION DE PAUSA Y RETIRO DE LA COMPETENCIADESCALIFICACIÓN O RETIRO DE LA COMPETENCIA}
+
+\begin{enumerate}
+\item La entrada de un miembro del equipo en la zona reservada sin
+permiso del juez. Sólo el responsable del equipo puede estar en la
+pista para colocar el robot durante el desarrollo de la prueba.
+\item Si la caída de piezas de un robot de forma no intencionada
+obstaculiza el buen desarrollo de la prueba por parte de su rival.
+\item Causar desperfectos en la pista o en el robot rival de forma deliberada.
+\end{enumerate}
+
+
+\section{PETICIONES, RECLAMOS Y VIOLACIONES}
+
+\begin{enumerate}
+\item Peticiones de pausa
+No existe petición de parada de carrera.
+\item Petición de retiro de la competencia
+La petición de retiro de competencia se dará solo antes de iniciar el
+circuito y la propuesta será evaluada por el jurado.
+\end{enumerate}
+
+\section{DESCALIFICACIÓN O RETIRO DE LA COMPETENCIA}
+
+\begin{enumerate}
+\item La entrada de un miembro del equipo en la zona reservada sin permiso del
+juez. Sólo el responsable del equipo puede estar en la pista para colocar el
+robot durante el desarrollo de la prueba.
+\item Si la caída de piezas de un robot de forma no intencionada obstaculiza el
+buen desarrollo de la prueba por parte de su rival.
+\item Causar desperfectos en la pista o en el robot rival de forma deliberada.
+\end{enumerate}
+
+\section{MISCELÁNEA}
+
+\begin{enumerate}
+\item Las  normas  anteriormente  citadas  son  las  bases  del  Concurso  y  deben  ser respetadas por todos los participantes.
+\item El incumplimiento de estas normas serán sancionadas de acuerdo a lo estipulado en las mismas o de acuerdo a la decisión de los organizadores del Concurso.
+\item Todo  el  documento  expuesto  se  encuentra  sujeto  a  revisiones  por  parte  de los miembros    de la comunidad de robótica por acuerdo mayoritario al final del año en curso.
+\item Cualquier cuestión no contemplada en el documento expuesto será resuelta por los organizadores y jurados del Concurso, y la decisión que se tome será de carácter inapelable.
+\end{enumerate}
+
+\section{COMITÉ DE JUECES}
+
+\begin{enumerate}
+\item La figura del juez es la máxima autoridad dentro de la competencia, el será el encargado de que las reglas y normas establecidas por el comité organizador, en esta categoría, sean cumplidas.
+\item Los jueces para esta competencia serán designados por miembros de la APR y de la organización del torneo de robótica. Como requerimiento mínimo debe haber la asistencia de dos jurados APR para validar el resultado de este certamen.
+\item Los participantes pueden presentar sus objeciones a los jueces encargados de la categoría antes de que acabe la competencia.
+\item En  caso  de  duda  en  la  aplicación de  las normas  en  la  competencia,  la  última palabra la tiene siempre el juez.
+\item En caso de existir una controversia ante la decisión del juez, se puede presentar una inconformidad por escrito ante  el comité de jueces una vez terminado el encuentro, se evaluaran los argumentos presentados y se tomará decisión al respecto. Esta decisión es inapelable.
+\end{enumerate}
+
+Uno o más jueces deben oficiar la competencia. Ellos deberán asegurarse de que estas reglas se cumplan y sancionar la calificación o eliminar un robot de la competencia, si el robot está funcionando de una manera insegura o no cumple con los lineamientos establecidos. Las decisiones de los jueces son definitivas.
+
+\section{INSCRIPCIONES}
+
+Las inscripciones se cierran el 29 de noviembre del 2019 a medio día, inscripciones con los anexos 1 y 2 escaneados en PDF; enviar a circae.unsaac@gmail.com con asunto: \textbf{Torneo de Robótica}. Consultas a circae.unsaac@gmail.com con asunto \textbf{Consulta Torneo de Robótica}
+
+
+\textbf{Cualquier aspecto que no se haya considerado en las bases, será resuelto por la comisión 
+organizadora de la VIII Semana Electrónica UNSAAC 2019}
+
+\newpage
+{\center
+{\Huge \bfseries Octava Semana Electrónica 2019} \\ [0.4cm]
+\textsc{\LARGE  Universidad Nacional de San Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+{ \bfseries Anexo1 - Datos Generales}}
+
+\subsubsection{NOMBRE DE ROBOT}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\subsubsection{Datos Generales}
+
+\begin{tabular}{|p{5cm}|p{10cm}|}
+\hline
+Nombres & \\ \hline
+Apellidos & \\ \hline
+DNI & \\ \hline
+Código & \\ \hline
+Sexo & \\ \hline
+E-mail & \\ \hline
+Numero de teléfono movil & \\ \hline
+Dirección & \\ \hline
+Escuela Profesional & \\ \hline
+Número de participante del Equipo & \\ \hline
+\end{tabular}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 6cm]{IMAGENES/firma.jpg}
+\caption{Huella digital, firma con nombre completo y DNI}
+\end{figure}
+
+\newpage
+{\center
+{\Huge \bfseries Octava Semana Electrónica 2019} \\ [0.4cm]
+\textsc{\LARGE  Universidad Nacional de San Antonio Abad del Cusco}\\[0.4cm] 
+\textsc{\Large Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica}\\[0.4cm] 
+\textsc{\large Escuela Profesional de Ingeniería Electrónica}\\[0.4cm]
+{ \bfseries Anexo2 - Formulario de Inscripción}}
+
+\subsubsection{NOMBRE DE ROBOT}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\subsubsection{CATEGORÍA}
+
+.....................................................................................................................................................................
+
+\subsubsection{CARACTERÍCTICAS DEL ROBOT}
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+.....................................................................................................................................................................
+
+
+\textbf{Al firmar el documento, acepta los términos y condiciones de las bases.}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 6cm]{IMAGENES/firma.jpg}
+\caption{Huella digital, firma con nombre completo y DNI}
+\end{figure}
+
+
+
+\end{document}
